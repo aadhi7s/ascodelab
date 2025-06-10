@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AS CodeLabs - Premium Email Template</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+
+        /* Reset styles */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            line-height: 1.6;
+
+            color: #1a1a1a;
+
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+            padding: 20px 0;
+
+        }
+
+
+
+        /* Main container */
+
+        .email-container {
+
+            max-width: 640px;
+
+            margin: 0 auto;
+
+            background-color: #ffffff;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.04);
+
+        }
+
+
+
+        /* Header with sophisticated gradient */
+
+        .header-banner {
+
+            position: relative;
+
+            height: 280px;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .header-banner img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+        }
+
+
+
+        .header-banner::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            background: rgba(0,0,0,0.2);
+
+            z-index: 1;
+
+        }
+
+
+
+        /* Removed header-content h1 and p styles as they are no longer in the banner */
+
+        .header-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            color: white;
+
+            /* This div is now empty or can be removed if no content should overlay banner */
+
+        }
+
+
+
+        /* Logo section with glassmorphism effect */
+
+        .logo-section {
+
+            position: relative;
+
+            text-align: center;
+
+            padding: 40px 30px;
+
+            background: rgba(255,255,255,0.95);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+
+        }
+
+
+
+        .logo-section::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: -1px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 60px;
+
+            height: 4px;
+
+            background: linear-gradient(90deg, #667eea, #764ba2);
+
+            border-radius: 2px;
+
+        }
+
+
+
+        .logo-section img {
+
+            max-width: 200px;
+
+            height: auto;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        /* Content sections with enhanced spacing */
+
+        .content-section {
+
+            padding: 50px 40px;
+
+        }
+
+
+
+        .content-section h1 {
+
+            color: #1a1a1a;
+
+            margin-bottom: 24px;
+
+            font-size: 28px;
+
+            font-weight: 600;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .content-section h2 {
+
+            color: #2d3748;
+
+            margin-bottom: 20px;
+
+            font-size: 22px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            padding-left: 20px;
+
+        }
+
+
+
+        .content-section h2::before {
+
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 4px;
+
+            height: 20px;
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            border-radius: 2px;
+
+        }
+
+
+
+        .content-section p {
+
+            margin-bottom: 18px;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            color: #4a5568;
+
+            font-weight: 400;
+
+        }
+
+
+
+        /* Premium CTA section */
+
+        .cta-section {
+
+            text-align: center;
+
+            padding: 60px 40px;
+
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+
+            position: relative;
+
+        }
+
+
+
+        .cta-section::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 1px;
+
+            background: linear-gradient(90deg, transparent, rgba(102,126,234,0.3), transparent);
+
+        }
+
+
+
+        .cta-section h2 {
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            margin-bottom: 16px;
+
+            color: #1a1a1a;
+
+        }
+
+
+
+        .cta-section p {
+
+            font-size: 16px;
+
+            color: #4a5568;
+
+            margin-bottom: 32px;
+
+            max-width: 400px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        .cta-button {
+
+            display: inline-block;
+
+            padding: 16px 32px;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-weight: 600;
+
+            font-size: 16px;
+
+            letter-spacing: 0.5px;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            box-shadow: 0 4px 14px rgba(102,126,234,0.4);
+
+        }
+
+
+
+        .cta-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 25px rgba(102,126,234,0.5);
+
+        }
+
+
+
+        /* Enhanced banner sections */
+
+        .banner-section {
+
+            margin: 0;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .banner-section img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
+
+
+
+        /* Adjusted promo-banner styles for better text visibility */
+
+        .promo-banner {
+
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+
+            padding: 40px;
+
+            text-align: center;
+
+            color: white;
+
+            position: relative;
+
+            box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.1);
+
+            background-blend-mode: multiply;
+
+        }
+
+
+
+        .promo-banner::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            background: rgba(0,0,0,0.2);
+
+            z-index: 1;
+
+        }
+
+
+
+        .promo-content {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+
+        .promo-banner h3 {
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+        }
+
+
+
+        .promo-banner p {
+
+            font-size: 16px;
+
+            opacity: 1;
+
+            font-weight: 400;
+
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        /* Premium footer */
+
+        .footer {
+
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+
+            color: white;
+
+            padding: 50px 40px 30px;
+
+            position: relative;
+
+        }
+
+
+
+        .footer::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 40px;
+
+            right: 40px;
+
+            height: 1px;
+
+            background: linear-gradient(90deg, transparent, rgba(102,126,234,0.5), transparent);
+
+        }
+
+
+
+        .footer-content {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr;
+
+            gap: 40px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .footer-info h4 {
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            margin-bottom: 16px;
+
+            color: #667eea;
+
+        }
+
+
+
+        .footer-info p {
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            color: #a0aec0;
+
+            line-height: 1.6;
+
+        }
+
+
+
+        .footer-info a {
+
+            color: #667eea;
+
+            text-decoration: none;
+
+        }
+
+
+
+        .social-section h4 {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            margin-bottom: 16px;
+
+            color: white;
+
+        }
+
+
+
+        .social-links {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .social-links a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 44px;
+
+            height: 44px;
+
+            background: rgba(102,126,234,0.1);
+
+            border-radius: 12px;
+
+            color: #667eea;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(102,126,234,0.2);
+
+        }
+
+
+
+        .social-links a:hover {
+
+            background: #667eea;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+        
+
+        .social-links a img {
+
+            width: 24px;
+
+            height: 24px;
+
+            object-fit: contain;
+
+            filter: brightness(0) invert(1);
+
+            transition: filter 0.3s ease;
+
+        }
+
+        
+
+        .social-links a:hover img {
+
+            filter: brightness(0) invert(1);
+
+        }
+
+
+
+        .footer-bottom {
+
+            text-align: center;
+
+            padding-top: 30px;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+        }
+
+
+
+        .footer-bottom p {
+
+            font-size: 12px;
+
+            color: #718096;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        .footer-bottom a {
+
+            color: #667eea;
+
+            text-decoration: none;
+
+        }
+
+
+
+        /* Responsive design */
+
+        @media screen and (max-width: 600px) {
+
+            body {
+
+                padding: 10px 0;
+
+            }
+
+
+
+            .email-container {
+
+                margin: 0 10px;
+
+                border-radius: 12px;
+
+            }
+
+
+
+            .header-banner {
+
+                height: 200px;
+
+            }
+
+
+
+            .header-content h1 {
+
+                font-size: 24px;
+
+            }
+
+
+
+            .content-section {
+
+                padding: 30px 25px;
+
+            }
+
+
+
+            .product-showcase {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+
+            }
+
+
+
+            .cta-section {
+
+                padding: 40px 25px;
+
+            }
+
+
+
+            .stats-section {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .stat-item {
+
+                border-right: none;
+
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+
+            }
+
+
+
+            .stat-item:last-child {
+
+                border-bottom: none;
+
+            }
+
+
+
+            .footer {
+
+                padding: 40px 25px 20px;
+
+            }
+
+
+
+            .footer-content {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="email-container">
+
+        <div class="header-banner">
+
+            <img src="https://github.com/aadhi7s/ascodelab/blob/main/Untitled%20design%20(3)%201.png?raw=true" alt="AS CodeLabs Header Banner">
+
+            <div class="header-content">
+
+                </div>
+
+        </div>
+
+
+
+        <div class="logo-section">
+
+            <img src="https://github.com/aadhi7s/ascodelab/blob/main/Instagram%20post%20-%2029.png?raw=true" alt="AS CodeLabs Logo">
+
+        </div>
+
+
+
+        <div class="content-section" style="text-align: center; padding-top: 20px; padding-bottom: 20px;">
+
+            <h1 style="font-size: 28px; margin-bottom: 10px;">Launch Your MVP Without Burning Your VC Money</h1>
+
+            <p style="font-size: 18px; color: #555;">Specializing in Mobile & Web App Development for the AI Market</p>
+
+        </div>
+
+
+
+
+
+        <div class="content-section">
+
+            <h1>We Help You Launch Your MVP</h1>
+
+            <p>We specialize in <strong>Mobile app development</strong> and <strong>Web app development for SaaS in the AI market</strong>. Give us a try without risking your life savings.</p>
+
+
+
+            <h2>Our Inclusive Package</h2>
+
+            <p>Price starts at <strong>$5,000</strong> and includes:</p>
+
+            <ul>
+
+                <li>Logo Design</li>
+
+                <li>Landing Page Development</li>
+
+                <li>Newsletter Setup</li>
+
+                <li>MVP Apps (maximum 3 weeks development)</li>
+
+                <li>Market Research (pitch slides for your next slide deck)</li>
+
+                <li>Deployment</li>
+
+            </ul>
+
+            <p>We also want to work with you long-term, and provide an additional service to maintain the MVP and move your app/website to the next launch.</p>
+
+        </div>
+
+
+
+        <div class="banner-section">
+
+            <div class="promo-banner">
+
+                <div class="promo-content">
+
+                    <h3>P.S: We are open to sign for NDA</h3>
+
+                    <p>We believe in building trust and protecting your innovative ideas from day one. Your intellectual property is safe with us.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="cta-section">
+
+            <h2>Ready to Get Started?</h2>
+
+            <p>Please contact <strong>admin@ascodelabs.com</strong> to get connected.</p>
+
+            <a href="mailto:admin@ascodelabs.com" class="cta-button">Contact Us Now</a>
+
+        </div>
+
+
+
+        <div class="footer">
+
+            <div class="footer-content">
+
+                <div class="footer-info">
+
+                    <h4>AS CodeLabs</h4>
+
+                    <p>Innovation Center, Tech Hub</p>
+
+                    <p>Coding Excellence District</p>
+
+                    <p>Email: <a href="mailto:admin@ascodelabs.com">admin@ascodelabs.com</a></p>
+
+                    <p>Phone: <a href="tel:+919791097309">+91 9791097309</a></p>
+
+                </div>
+
+                <div class="social-section">
+
+                    <h4>Connect With Us</h4>
+
+                    <div class="social-links">
+
+                        <a href="#" title="GitHub">
+
+                            <img src="data:image/png;base64,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" alt="GitHub">
+
+                        </a>
+
+                        <a href="#" title="LinkedIn">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTit0kWS0r6UOED9dvYU4iLe1KNW-65ADq7hw&s" alt="LinkedIn">
+
+                        </a>
+
+                        <a href="#" title="Twitter">
+
+                            <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
+
+                        </a>
+
+                        <a href="#" title="Instagram">
+
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/960px-Instagram_logo_2022.svg.png" alt="Instagram">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <p>© 2025 AS CodeLabs. All rights reserved.<br>
+
+                You're receiving this because you subscribed to our premium newsletter.<br>
+
+                <a href="#">Unsubscribe</a> | <a href="#">Update Preferences</a> | <a href="#">Privacy Policy</a></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
